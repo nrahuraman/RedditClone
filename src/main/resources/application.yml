@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: RedditClone
+
+    
+server:
+ port: 8082
+
+---
+
+spring:
+  profiles:
+    active: dev
+    
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: Welcome@99
+    url: jdbc:mysql://127.0.0.1:3306/redditclone
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: Welcome@99
+    url: jdbc:mysql://127.0.0.1:3306/redditclone
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
